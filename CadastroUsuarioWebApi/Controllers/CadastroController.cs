@@ -54,6 +54,7 @@ namespace CadastroUsuarioWebApi.Controllers
 
         }
 
+        
         [HttpPost]
         public ActionResult<CadastroDTO> Post(CadastroDTO cadastroDto)
         {
