@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /CadastroUsuarioWebApi/appsettings.json
 /CadastroUsuarioWebApi/CUsersvarleOneDriveDocumentoslogApiLogCadastroUsuario.txt
+mysql-data/

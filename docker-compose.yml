@@ -1,0 +1,30 @@
+services:
+  cadastrousuariowebapi:
+    image: ${DOCKER_REGISTRY-}cadastrousuariowebapi
+    build:
+      context: .
+      dockerfile: CadastroUsuarioWebApi/Dockerfile
+    depends_on:
+    - database
+    ports:
+    - "5001:80"
+    restart: always
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+
+  database:
+    image: mysql
+    container_name: mysqlcadastrodb
+    ports:
+    - "3309:3306"
+    volumes:
+    - dbmysql-volume2:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_USER: varlei
+      MYSQL_PASSWORD: varlei
+      MYSQL_DATABASE: cadastrousuariodb
+
+volumes:
+  dbmysql-volume2:
